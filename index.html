@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Three.js Periodic Table Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <style>
+        html, body {
+            height: 100%;
+        }
+body {
+            background-color: #000000;
+            margin: 0;
+            font-family: Helvetica, sans-serif;;
+            overflow: hidden;
+        }
+a {
+            color: #ffffff;
+        }
+#menu {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+            /* display: flex; */
+            /* justify-content: center;
+            padding: 5px 10px; */
+        }
+#periodic-table {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+        }
+.element {
+            width: 120px;
+            height: 160px;
+            box-shadow: 0px 0px 12px rgba(0, 255, 255, 0.5);
+            border: 1px solid rgba(127, 255, 255, 0.25);
+            text-align: center;
+            cursor: default;
+        }
+.element:hover {
+            box-shadow: 0px 0px 12px rgba(0, 255, 255, 0.75);
+            border: 1px solid rgba(127, 255, 255, 0.75);
+        }
+.element .number {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 12px;
+            color: rgba(127, 255, 255, 0.75);
+        }
+.element .country {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 12px;
+    color: rgba(127, 255, 255, 0.75);
+        }
+.element .picture {
+    position: absolute;
+    width: 80px;
+    height: 70px;
+    top: 40px;
+    left: 20px;
+    right: 0px;
+        }
+.element .details {
+            position: absolute;
+            bottom: 15px;
+            left: 0px;
+            right: 0px;
+            font-size: 12px;
+            color: rgba(127, 255, 255, 0.75);
+        }
+button {
+            color: rgba(127, 255, 255, 0.75);
+            background: transparent;
+            outline: 1px solid rgba(127, 255, 255, 0.75);
+            border: 0px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+button:hover {
+            background-color: rgba(0, 255, 255, 0.5);
+        }
+button:active {
+            color: #000000;
+            background-color: rgba(0, 255, 255, 0.75);
+        }
+.color-indicator-bar {
+    display: flex;
+    align-items: right;
+    justify-content: space-between;       
+}
+.color-indicator-bar {
+    width: 100%;
+    max-width: 300px;
+    margin: 20px auto;
+}
+
+.label {
+    color: white;
+    font-size: 14px;
+}
+
+.gradient-bar {
+    flex-grow: 1;
+    height: 20px;
+    margin: 0 10px;
+    background: linear-gradient(to right, #EF3022, #FDCA35, #3A9F48);
+    border-radius: 5px;
+}
+
+
+    </style>
+</head>
+<body>
+<script src="./lib/three.core.min.js"></script>
+<script src="./lib/Tween.min.js"></script>
+<script src="./lib/controls/TrackballControls.js"></script>
+<script src="./lib/renderers/CSS3DRenderer.js"></script>
+<div id="container"></div>
+<div id="menu">
+    <button id="table">TABLE</button>
+    <button id="sphere">SPHERE</button>
+    <button id="dhelix">HELIX</button>
+    <button id="grid">GRID</button>
+<div class="color-bar-container">
+    <div class="color-indicator-bar">
+        <div class="label left">Low</div>
+        <div class="gradient-bar"></div>
+        <div class="label right">High</div>
+    </div>
+</div>   
+</div>
+<script src="./main.js"></script>
+</body>
+</html>
